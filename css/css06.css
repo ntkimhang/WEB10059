@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+.promo {
+  background-image: url(../images/ip16prm.jpg);
+  background-size: 100%;
+  opacity: 0.5;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 4em;
+  text-shadow: 3px 3px 2px black;
+  color: rgb(255, 21, 21);
+}
+
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.feature {
+  flex: 1 1 200px; /*flex-grow,flex-shrink, flex-basis*/
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.action {
+  background: #28a745;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.action button {
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #abe7f5;
+}

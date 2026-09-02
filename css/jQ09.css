@@ -1,0 +1,65 @@
+body {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#benTrai {
+  width: 350px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+#benPhai {
+  width: 350px;
+  height: 250px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  background-color: #fff5e5;
+  text-align: center;
+}
+
+fieldset {
+  border: 2px solid blue;
+  margin-bottom: 8px;
+  padding: 15px;
+}
+
+legend {
+  font-size: 16px;
+}
+
+input {
+  font-size: 15px;
+}
+
+#danhsach {
+  margin: 10px 0;
+  padding-left: 35px;
+}
+
+#danhsach li {
+  height: 28px;
+  line-height: 28px;
+  padding-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#danhsach li:nth-child(1),
+#danhsach li:nth-child(3) {
+  background-color: #996699;
+}
+
+#danhsach li:nth-child(2),
+#danhsach li:nth-child(4) {
+  background-color: #99dddd;
+}
+
+#ketqua {
+  margin-top: 95px;
+  font-size: 40px;
+  font-weight: bold;
+  color: blue;
+}
