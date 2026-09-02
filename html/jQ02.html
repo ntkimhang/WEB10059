@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tính số ngày</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <h2>Tính số ngày giữa hai thời điểm</h2>
+
+    Từ ngày:
+    <input type="text" id="tungay" value="05/29/2018" />
+
+    <br />
+
+    Đến ngày:
+    <input type="text" id="denngay" value="06/30/2018" />
+
+    <br />
+
+    <button id="tinh">Tính số ngày</button>
+
+    <p>Số ngày là: <span id="ketqua"></span></p>
+
+    <script>
+      $("#tinh").click(function () {
+        var ngay1 = new Date($("#tungay").val());
+        var ngay2 = new Date($("#denngay").val());
+
+        var songay = (ngay2 - ngay1) / (1000 * 60 * 60 * 24);
+
+        $("#ketqua").text(songay);
+      });
+    </script>
+  </body>
+</html>

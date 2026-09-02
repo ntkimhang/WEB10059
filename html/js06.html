@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Các phép tính số học</title>
+  </head>
+
+  <body>
+    <table border="1" align="center" width="400">
+      <tr>
+        <th colspan="2">CÁC PHÉP TÍNH SỐ HỌC</th>
+      </tr>
+      <tr>
+        <td>Số thứ 1</td>
+        <td><input type="text" id="so1" value="5" /></td>
+      </tr>
+
+      <tr>
+        <td>Số thứ 2</td>
+        <td><input type="text" id="so2" value="4" /></td>
+      </tr>
+
+      <tr>
+        <td>Chọn phép toán</td>
+        <td>
+          <input type="radio" name="pt" value="+" /> Cộng <br />
+          <input type="radio" name="pt" value="-" /> Trừ <br />
+          <input type="radio" name="pt" value="*" /> Nhân <br />
+          <input type="radio" name="pt" value="/" /> Chia
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input type="button" value="Thực hiện" onclick="tinh()" />
+        </td>
+
+        <td>
+          <input type="text" id="ketqua" />
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function tinh() {
+        var a = parseInt(document.getElementById("so1").value);
+        var b = parseInt(document.getElementById("so2").value);
+
+        var pt = document.getElementsByName("pt");
+
+        if (pt[0].checked == true) {
+          document.getElementById("ketqua").value = a + b;
+        }
+
+        if (pt[1].checked == true) {
+          document.getElementById("ketqua").value = a - b;
+        }
+
+        if (pt[2].checked == true) {
+          document.getElementById("ketqua").value = a * b;
+        }
+
+        if (pt[3].checked == true) {
+          document.getElementById("ketqua").value = a / b;
+        }
+      }
+    </script>
+  </body>
+</html>

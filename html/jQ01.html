@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery 01 - Insert List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      function insert() {
+        var mh = $("#txtMonhoc").val();
+
+        if (mh.trim() != "") {
+          var str = "<li>" + mh.trim() + "</li>";
+          $("ul").append(str);
+          $("#txtMonhoc").val("");
+        }
+      }
+
+      $(document).ready(function () {
+        $("button").click(function () {
+          insert();
+        });
+
+        $("#txtMonhoc").keypress(function (event) {
+          if (event.which == 13) {
+            insert();
+          }
+        });
+      });
+    </script>
+
+    <p>
+      <input type="text" id="txtMonhoc" placeholder="Nhập tên môn học..." />
+    </p>
+
+    <ul>
+      <li>Python</li>
+      <li>PHP</li>
+    </ul>
+
+    <p>
+      <button>Thêm môn học</button>
+    </p>
+  </body>
+</html>

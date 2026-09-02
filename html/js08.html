@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CHANGE COLOR</title>
+
+    <style>
+      div {
+        margin: 0 auto;
+        width: 500px;
+      }
+
+      div#divText {
+        height: 200px;
+        background-color: #ff0000;
+        color: #ffff00;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 200px;
+        box-shadow: inset 0px 0px 20px #990000;
+      }
+    </style>
+
+    <script>
+      function changeColor() {
+        var bkcolor = document.getElementById("bkcolor").value;
+        var textColor = document.getElementById("textColor").value;
+        var text = document.getElementById("txtinput").value;
+
+        var divText = document.getElementById("divText");
+
+        divText.innerHTML = text;
+        divText.style.backgroundColor = bkcolor;
+        divText.style.color = textColor;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="divText">WELCOME HTML5!</div>
+
+    <div>
+      <p>
+        Nhập nội dung:
+        <input
+          type="text"
+          id="txtinput"
+          autofocus
+          value="WELCOME HTML5!"
+          size="50" />
+      </p>
+
+      <p>
+        Màu nền:
+        <input type="color" id="bkcolor" value="#ff0000" />
+      </p>
+
+      <p>
+        Màu chữ:
+        <input type="color" id="textColor" value="#ffff00" />
+      </p>
+
+      <input type="button" onclick="changeColor()" value="Thực hiện" />
+    </div>
+  </body>
+</html>

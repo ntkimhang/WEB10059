@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQ09</title>
+
+    <link rel="stylesheet" href="../css/jQ09.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/jQ09.js"></script>
+  </head>
+
+  <body>
+    <div id="benTrai">
+      <fieldset>
+        <legend>Chọn</legend>
+
+        <input type="radio" name="chu" id="binhthuong" checked />
+        Chữ bình thường
+
+        <br />
+
+        <input type="radio" name="chu" id="cobong" />
+        Chữ có bóng
+
+        <br /><br />
+
+        Chọn màu chữ:
+        <input type="color" id="mauchu" value="#0000ff" />
+
+        <br /><br />
+
+        <input type="button" id="xoa" value="Xóa phần tử cuối" />
+        <input type="button" id="phuchoi" value="Phục hồi" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Click vào một chuỗi</legend>
+
+        <ol id="danhsach">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JQUERY</li>
+          <li>JAVASCRIPT</li>
+        </ol>
+      </fieldset>
+    </div>
+
+    <div id="benPhai">
+      <div id="ketqua">HTML</div>
+    </div>
+  </body>
+</html>

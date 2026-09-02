@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Biểu đồ</title>
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <style>
+      fieldset {
+        width: 700px;
+        margin: auto;
+      }
+
+      #bieudo {
+        width: 700px;
+        height: 350px;
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <fieldset>
+      <h3>Các dạng biểu đồ</h3>
+
+      <fieldset>
+        <legend>Chart types</legend>
+
+        <input type="radio" name="chart" value="Pie" checked />Pie
+        <input type="radio" name="chart" value="Line" />Line
+        <input type="radio" name="chart" value="Column" />Column
+      </fieldset>
+
+      <br />
+
+      Tiêu đề:
+      <input
+        type="text"
+        id="tieude"
+        value="Xuất sắc,Giỏi,Khá,Trung bình,Yếu"
+        size="50" />
+
+      <br />
+
+      Giá trị:
+      <input type="text" id="giatri" value="10,50,70,80,30" size="50" />
+
+      <input type="button" value="Draw Chart" onclick="drawChart()" />
+
+      <br /><br />
+    </fieldset>
+
+    <div id="bieudo"></div>
+
+    <script>
+      google.charts.load("current", {
+        packages: ["corechart"],
+      });
+
+      function drawChart() {
+        var tieuDe = document.getElementById("tieude").value;
+        var giaTri = document.getElementById("giatri").value;
+
+        var mangTieuDe = tieuDe.split(",");
+        var mangGiaTri = giaTri.split(",");
+
+        var chart = document.getElementsByName("chart");
+        var loaiChart;
+
+        for (var i = 0; i < chart.length; i++) {
+          if (chart[i].checked == true) {
+            loaiChart = chart[i].value;
+          }
+        }
+
+        var mau = [];
+
+        for (var i = 0; i < mangTieuDe.length; i++) {
+          var color = "#";
+
+          for (var j = 0; j < 6; j++) {
+            color += Math.floor(Math.random() * 16).toString(16);
+          }
+
+          mau.push(color);
+        }
+
+        if (loaiChart == "Pie") {
+          var data = new google.visualization.DataTable();
+
+          data.addColumn("string", "Tên");
+          data.addColumn("number", "Giá trị");
+
+          for (var i = 0; i < mangTieuDe.length; i++) {
+            data.addRow([mangTieuDe[i], parseInt(mangGiaTri[i])]);
+          }
+
+          var options = {
+            title: "Kết quả học tập",
+            width: 600,
+            height: 300,
+            colors: mau,
+            is3D: false,
+          };
+
+          var bieuDo = new google.visualization.PieChart(
+            document.getElementById("bieudo"),
+          );
+
+          bieuDo.draw(data, options);
+        }
+
+        if (loaiChart == "Line") {
+          var data = new google.visualization.DataTable();
+
+          data.addColumn("string", "Tên");
+          data.addColumn("number", "Giá trị");
+
+          for (var i = 0; i < mangTieuDe.length; i++) {
+            data.addRow([mangTieuDe[i], parseInt(mangGiaTri[i])]);
+          }
+
+          var options = {
+            title: "Kết quả học tập",
+            width: 600,
+            height: 300,
+          };
+
+          var bieuDo = new google.visualization.LineChart(
+            document.getElementById("bieudo"),
+          );
+
+          bieuDo.draw(data, options);
+        }
+
+        if (loaiChart == "Column") {
+          var data = new google.visualization.DataTable();
+
+          data.addColumn("string", "Tên");
+          data.addColumn("number", "Giá trị");
+          data.addColumn({
+            type: "string",
+            role: "style",
+          });
+
+          for (var i = 0; i < mangTieuDe.length; i++) {
+            data.addRow([mangTieuDe[i], parseInt(mangGiaTri[i]), mau[i]]);
+          }
+
+          var options = {
+            title: "Kết quả học tập",
+            width: 600,
+            height: 300,
+          };
+
+          var bieuDo = new google.visualization.ColumnChart(
+            document.getElementById("bieudo"),
+          );
+
+          bieuDo.draw(data, options);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Thong ke chuoi</title>
+    <script>
+      function Statistic() {
+        var s = document.getElementById("txtS").value;
+        var arr = s.split(" ");
+        var i,
+          words = 0;
+        var arrKq = [];
+
+        // khởi tạo mảng
+        for (i = 0; i < 128; i++) arrKq[i] = 0;
+
+        // đếm số từ
+        for (i = 0; i < arr.length; i++) {
+          if (arr[i].trim() != "") words++;
+        }
+
+        var kq =
+          "Characters: " + s.length + "<br>" + "Words: " + words + "<br>";
+
+        // đếm ký tự
+        for (i = 0; i < s.length; i++) {
+          if (s[i] >= "a" && s[i] <= "z")
+            arrKq[s.charCodeAt(i) - 32]++; // chuyển về in hoa
+          else arrKq[s.charCodeAt(i)]++;
+        }
+
+        // in kết quả
+        for (i = 0; i < arrKq.length; i++) {
+          if (arrKq[i] > 0)
+            kq +=
+              "Character '" +
+              String.fromCharCode(i) +
+              "': " +
+              arrKq[i] +
+              "<br>";
+        }
+
+        document.getElementById("kq").innerHTML = kq;
+      }
+    </script>
+  </head>
+
+  <body>
+    <table>
+      <caption>
+        <h3>String Statistic</h3>
+      </caption>
+      <tr>
+        <td>String:</td>
+        <td>
+          <input
+            type="text"
+            id="txtS"
+            size="50"
+            value="Hello, how are you? 112345" />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button onclick="Statistic()">Statistic</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><p id="kq"></p></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQ04</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/jQ04.js"></script>
+
+    <style>
+      #benTrai {
+        width: 190px;
+        display: inline-block;
+        vertical-align: top;
+        padding: 5px;
+      }
+
+      #benPhai {
+        width: 190px;
+        display: inline-block;
+        vertical-align: top;
+        padding: 5px;
+      }
+
+      .mau {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      #xanhduong {
+        background-color: blue;
+      }
+
+      #do {
+        background-color: red;
+      }
+
+      #hong {
+        background-color: magenta;
+      }
+
+      #xanhla {
+        background-color: lime;
+      }
+
+      #ketqua1 {
+        width: 180px;
+        height: 120px;
+        border: 2px solid gray;
+        margin-top: 20px;
+      }
+
+      #ketqua2 {
+        width: 180px;
+        height: 120px;
+        border: 2px solid gray;
+        margin-top: 10px;
+      }
+
+      #thongbao {
+        color: magenta;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="benTrai">
+      Click lên các hình vuông:
+
+      <br />
+
+      <div class="mau" id="xanhduong"></div>
+      <div class="mau" id="do"></div>
+      <div class="mau" id="hong"></div>
+      <div class="mau" id="xanhla"></div>
+
+      <div id="ketqua1"></div>
+    </div>
+
+    <div id="benPhai">
+      Click lên các hình vuông:
+
+      <p id="thongbao"></p>
+
+      <div id="ketqua2"></div>
+    </div>
+  </body>
+</html>

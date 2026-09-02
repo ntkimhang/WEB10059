@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chương trình xử lý chuỗi</title>
+
+    <link rel="stylesheet" href="../css/js05.css" />
+  </head>
+
+  <body>
+    <div id="noidung">
+      <h3>CHƯƠNG TRÌNH XỬ LÝ CHUỖI</h3>
+
+      <div class="dong">
+        Chuỗi S1:
+        <input type="text" id="s1" value="Learning JAVASCRIPT is Very Easy" />
+      </div>
+
+      <div class="dong">
+        Chuỗi S2:
+        <input type="text" id="s2" value="javascript" />
+      </div>
+
+      <div class="dong">
+        Chuỗi S3:
+        <input type="text" id="s3" value="jQuery" />
+      </div>
+
+      <div class="dong">
+        Vị trí chèn:
+        <input type="text" id="vitri" value="0" />
+      </div>
+
+      <div class="nut">
+        <button id="chuanhoa">Chuẩn hóa chuỗi</button>
+        <button id="daochuoi">Đảo chuỗi</button>
+        <button id="khoiphuc">Khôi phục</button>
+      </div>
+
+      <div class="nut">
+        <button id="thays2bangs3">Thay thế S2 bằng S3</button>
+        <button id="chens2vaos1">Chèn S2 vào S1</button>
+        <button id="xoas2trongs1">Xóa S2 trong S1</button>
+      </div>
+    </div>
+
+    <script>
+      var s1Goc = document.getElementById("s1").value;
+      var s2Goc = document.getElementById("s2").value;
+      var s3Goc = document.getElementById("s3").value;
+      var viTriGoc = document.getElementById("vitri").value;
+
+      document.getElementById("chuanhoa").onclick = function () {
+        var s1 = document.getElementById("s1").value;
+
+        s1 = s1.trim();
+        s1 = s1.replace(/\s+/g, " ");
+
+        document.getElementById("s1").value = s1;
+      };
+
+      document.getElementById("daochuoi").onclick = function () {
+        var s1 = document.getElementById("s1").value;
+
+        s1 = s1.split("").reverse().join("");
+
+        document.getElementById("s1").value = s1;
+      };
+
+      document.getElementById("thays2bangs3").onclick = function () {
+        var s1 = document.getElementById("s1").value;
+        var s2 = document.getElementById("s2").value;
+        var s3 = document.getElementById("s3").value;
+
+        s1 = s1.replace(s2, s3);
+
+        document.getElementById("s1").value = s1;
+      };
+
+      document.getElementById("chens2vaos1").onclick = function () {
+        var s1 = document.getElementById("s1").value;
+        var s2 = document.getElementById("s2").value;
+        var viTri = parseInt(document.getElementById("vitri").value);
+
+        if (viTri >= 0 && viTri <= s1.length) {
+          s1 = s1.slice(0, viTri) + s2 + s1.slice(viTri);
+
+          document.getElementById("s1").value = s1;
+        } else {
+          alert("Vị trí chèn không hợp lệ!");
+        }
+      };
+
+      document.getElementById("xoas2trongs1").onclick = function () {
+        var s1 = document.getElementById("s1").value;
+        var s2 = document.getElementById("s2").value;
+
+        s1 = s1.replace(s2, "");
+
+        document.getElementById("s1").value = s1;
+      };
+
+      document.getElementById("khoiphuc").onclick = function () {
+        document.getElementById("s1").value = s1Goc;
+        document.getElementById("s2").value = s2Goc;
+        document.getElementById("s3").value = s3Goc;
+        document.getElementById("vitri").value = viTriGoc;
+      };
+    </script>
+  </body>
+</html>
